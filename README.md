@@ -1,5 +1,5 @@
 # rainbowprint
-A Python 3 module that allows you to print your Python3 command line output in pretty colors.  Print the rainbow!
+A Python 3 module that allows you to print your command line output in pretty colors.  Print the rainbow!
 
 ## Prerequisites
 This module requires python3 (version 3.6 or later) and python3-pip.
