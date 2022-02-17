@@ -12,7 +12,7 @@ These prerequisites can be installed on a Debian based linux machine, like so:
 
 Via Python pip:
 
-`pip install rainbowprint`
+`pip install rainbowprint-TechnoHwizrdry`
 
 ## Usage
 Import the rprint function, like so:
