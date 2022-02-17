@@ -44,6 +44,8 @@ The optional arguments for python's print() can also be passed to rprint():
 
 `rprint('Some example text', seq=1, sep=None, end='', file=None, flush=True)`
 
+## Functions
+
 #### rprint(text: object, seq: int = 0, **kwargs) -> None
 Prints text in color pattern, based on the selected sequence (seq).
 This function can also take the same arguments as Python's print()
