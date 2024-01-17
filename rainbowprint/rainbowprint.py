@@ -2,11 +2,14 @@
 __author__ = "Alexan Mardigian, Techno-Hwizrdry"
 
 from collections.abc import Iterable
-from colored import attr, fg, names, stylize
+from colored import attr, fg, stylize # names, stylize
+from colored.library import Library
 from colour import Color
 from functools import partial
 from typing import Generator
 import random
+
+NAMES = tuple(Library.COLORS.keys())
 
 def rprint(text: object, seq: int = 0, **kwargs) -> None:
     '''
@@ -16,9 +19,11 @@ def rprint(text: object, seq: int = 0, **kwargs) -> None:
     '''
     sequences = {
         0: magenta_gradient,
-        1: partial(basic_gradient, 
-                   kwargs.get('start', ''), 
-                   kwargs.get('end', ''))
+        1: partial(
+            basic_gradient, 
+            kwargs.get('start', ''),
+            kwargs.get('end', '')
+        )
     }
     color = sequences[seq]()
     colored_chars = []
@@ -26,6 +31,7 @@ def rprint(text: object, seq: int = 0, **kwargs) -> None:
 
     for char in chars:
         text_color = next(color)
+        print(f'TEXT COLOR = {text_color}')
         style = stylize(char, fg(text_color), attr(0))
         colored_chars.append(style)
 
@@ -40,11 +46,11 @@ def magenta_gradient() -> Generator[int, None, None]:
     '''
     Generates an integer that corresponds to a color in this gradient.
     '''
-    colors = names[19:230]
+    colors = NAMES[19:230]
     index = random.randint(0, len(colors) - 1)
 
     while True:
-        yield colors[index].lower()
+        yield colors[index]
         index = (1 + index) % len(colors)
 
 def basic_gradient(start: str='', end: str='') -> Generator[int, None, None]:
