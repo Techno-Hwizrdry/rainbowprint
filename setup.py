@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1'
+VERSION = '0.0.5'
 DESCRIPTION = 'Print standard output in colorful gradients.'
 LONG_DESCRIPTION = 'A Python 3 module that allows you to print your command line output in pretty colors.  Print the rainbow!'
 
@@ -16,7 +16,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     python_requires=">=3.6",
-    install_requires=['colored', 'colour'],
+    install_requires=['colored==1.4.3', 'colour==0.1.5'],
     keywords=['python', 'colors', 'gradient', 'terminal', 'output'],
     classifiers=[
         # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
